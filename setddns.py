@@ -9,12 +9,12 @@ config= configparser.ConfigParser()
 config.read('/etc.defaults/ddns_provider.conf')
 
 try:
-        config['Cloudflare']
+        config['Cloudflare2']
 except KeyError:
-        config['Cloudflare']= {}
+        config['Cloudflare2']= {}
 
-config['Cloudflare']['modulepath'] = '/usr/syno/bin/ddns/cloudflare.php'
-config['Cloudflare']['queryurl'] = 'https://www.cloudflare.com/'
+config['Cloudflare2']['modulepath'] = '/usr/syno/bin/ddns/cloudflare.php'
+config['Cloudflare2']['queryurl'] = 'https://www.cloudflare.com/'
 
 with open('/etc.defaults/ddns_provider.conf', 'w') as configfile:
         config.write(configfile)
